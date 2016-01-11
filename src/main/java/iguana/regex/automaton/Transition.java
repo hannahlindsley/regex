@@ -41,8 +41,6 @@ public class Transition implements Comparable<Transition>, Serializable {
 	
 	private State destination;
 	
-	private int id;
-	
 	public Transition(int start, int end, State destination) {
 		this(CharacterRange.in(start, end), destination);
 	}
@@ -63,7 +61,7 @@ public class Transition implements Comparable<Transition>, Serializable {
 	}
 	
 	public static Transition EOFTransition(State destination) {
-		return new Transition(EOF.VALUE, destination);
+		return new Transition(EOF.VALUE(), destination);
 	}
 	
 	public int getStart() {
@@ -76,14 +74,6 @@ public class Transition implements Comparable<Transition>, Serializable {
 	
 	public CharacterRange getRange() {
 		return range;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public int getId() {
-		return id;
 	}
 	
 	public State getDestination() {
