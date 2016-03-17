@@ -20,5 +20,5 @@ javacOptions in (Compile,doc) += "-Xdoclint:none"
 
 val main = Project(id = "regex", base = file(".")).dependsOn(utils)
 
-lazy val utils = if (file("../utils").exists) ProjectRef(file("../utils"), "utils")
-                 else ProjectRef(uri("https://github.com/iguana-parser/utils.git"), "utils")
+lazy val utils = if (file("../utils").exists) ProjectRef(file("../utils"), "util")
+                 else ProjectRef(uri("https://github.com/iguana-parser/utils.git"), "util")
